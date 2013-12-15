@@ -33,7 +33,7 @@ function() {
 	}
 
 	return ObjectFactory;
-}]).factory("$meteor", ["$rootScope", "MeteorCollections", "$meteorObject",
+}]).factory("$meteorCollection", ["$rootScope", "MeteorCollections", "$meteorObject",
 function($rootScope, MeteorCollections, $meteorObject) {
 	$rootScope.apply = _.debounce(function() {
 		try {
@@ -107,6 +107,9 @@ function($rootScope, MeteorCollections, $meteorObject) {
 	}
 
 	return CollectionFactory;
+}]).
+factory("$meteor", [function(){
+	return Meteor; 
 }]); 
 
 /** Removes AngularJS transient properties from Object tree */
