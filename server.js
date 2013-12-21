@@ -27,7 +27,7 @@ WebApp.connectHandlers
         code = code.replace("<html##HTML_ATTRIBUTES##>",'<html ng-app="meteorApp">');
         if (typeof __meteor_runtime_config__ !== 'undefined') {
           code = code.replace(
-            "##RUNTIME_CONFIG##",
+            "##BUNDLED_JS_CSS_PREFIX##",
             "<script type='text/javascript'>" + "__meteor_runtime_config__ = " +
               JSON.stringify(__meteor_runtime_config__) + ";" + "</script>");
           }
