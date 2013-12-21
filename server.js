@@ -27,12 +27,12 @@ WebApp.connectHandlers
         code = code.replace("<html##HTML_ATTRIBUTES##>",'<html ng-app="meteorApp">');
         if (typeof __meteor_runtime_config__ !== 'undefined') {
           code = code.replace(
-            "##BUNDLED_JS_CSS_PREFIX##",
+            "##RUNTIME_CONFIG##",
             "<script type='text/javascript'>" + "__meteor_runtime_config__ = " +
               JSON.stringify(__meteor_runtime_config__) + ";" + "</script>");
           }
           // Hack to remove ##ROOT_URL_PATH_PREFIX## from static files. 
-          code = code.replace(/##ROOT_URL_PATH_PREFIX##/g, "");
+          code = code.replace(/##BUNDLED_JS_CSS_PREFIX##/g, "");
       
           res.writeHead(200, {'Content-Type': 'text/html'});  
           res.write(code);
